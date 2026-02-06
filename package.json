@@ -1,0 +1,39 @@
+{
+  "name": "nodewarden",
+  "version": "1.0.0",
+  "description": "Minimal Bitwarden-compatible server running on Cloudflare Workers",
+  "author": "shuaiplus",
+  "license": "LGPL-3.0",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "keywords": [
+    "bitwarden",
+    "vaultwarden",
+    "cloudflare",
+    "workers",
+    "password-manager"
+  ],
+  "cloudflare": {
+    "bindings": {
+      "JWT_SECRET": {
+        "description": "用于签名 JWT 的密钥。请输入一个随机的复杂字符串（建议 32 位以上）"
+      },
+      "VAULT": {
+        "description": "用于存储密码库数据的 KV 存储"
+      },
+      "ATTACHMENTS": {
+        "description": "用于存储文件附件的 R2 存储桶"
+      }
+    }
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260131.0",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.61.1"
+  }
+}
+

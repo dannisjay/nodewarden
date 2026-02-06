@@ -1,0 +1,3 @@
+# JWT Secret for signing tokens (required)
+# Generate one with: openssl rand -hex 32
+JWT_SECRET=your-secret-key-herexxs22fd2ds
